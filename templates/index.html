@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>AI Gesture Recognition</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<h1>🤖 AI Gesture Recognition System</h1>
+
+<div class="container">
+
+<div class="camera">
+<img src="{{ url_for('video') }}">
+</div>
+
+<div class="panel">
+
+<h2>Supported Gestures</h2>
+
+<ul>
+<li>✋ Palm</li>
+<li>✊ Fist</li>
+<li>👌 OK</li>
+<li>✌️ Peace</li>
+<li>☝️ Pointing</li>
+</ul>
+
+<h2>Gesture History</h2>
+
+<ul>
+{% for g in history %}
+<li>{{ g }}</li>
+{% endfor %}
+</ul>
+
+</div>
+
+</div>
+
+</body>
+</html>
